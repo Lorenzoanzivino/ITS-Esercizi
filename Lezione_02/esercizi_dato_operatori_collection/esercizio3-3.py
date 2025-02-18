@@ -3,6 +3,7 @@ Your Own List: Think of your favorite mode of transportation, such as a motorcyc
 and make a list that stores several examples. Use your list to print a series of statements about these items,
 such as “I would like to own a Honda motorcycle.”'''
 
-myfavoritelist:list = ["motocicletta Honda", "Macchina Ducia Duster"]
+myfavoritelist:list = ["Motocicletta Honda", "Macchina Ducia Duster", "Macchina Ferrari", "Motocicletta Ducati", "Macchina Lamborghini"]
 
-print(myfavoritelist)
+for items in myfavoritelist:
+        print(f"Mi piacerebbe avere una", items)
