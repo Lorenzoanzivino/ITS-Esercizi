@@ -5,7 +5,7 @@ Shrinking Guest List: You just found out that your new dinner table won’t arri
 • Print a message to each of the two people still on your list, letting them know they’re still invited.
 • Use del to remove the last two names from your list, so you have an empty list. Print your list to make sure you actually have an empty list at the end of your program.'''
 
-invitati_cena:list = ["Stefano", "Veronica", "Francesco", "Marco"]
+invitati_cena:list[str] = ["Stefano", "Veronica", "Francesco", "Marco"]
 print(invitati_cena)
 
 for invitato in invitati_cena:

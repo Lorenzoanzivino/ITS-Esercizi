@@ -7,7 +7,7 @@ More Guests: You just found a bigger dinner table, so now more space is availabl
 • Use append() to add one new guest to the end of your list.
 • Print a new set of invitation messages, one for each person in your list.'''
 
-invitati_cena:list = ["Stefano", "Veronica", "Francesco", "Marco"]
+invitati_cena:list[str] = ["Stefano", "Veronica", "Francesco", "Marco"]
 print(invitati_cena)
 
 for invitato in invitati_cena:

@@ -4,7 +4,7 @@ Changing Guest List: You just heard that one of your guests can’t make the din
 • Modify your list, replacing the name of the guest who can’t make it with the name of the new person you are inviting.
 • Print a second set of invitation messages, one for each person who is still in your list.'''
 
-invitati_cena:list = ["Stefano", "Veronica", "Francesco", "Marco"]
+invitati_cena:list[str] = ["Stefano", "Veronica", "Francesco", "Marco"]
 print(invitati_cena)
 
 for invitato in invitati_cena:
