@@ -7,3 +7,7 @@ myfriendslist:list = ["Stefano", "Peppe", "Francesco", "Patrick"]
 for name in myfriendslist:
     print(f"Ciao, {name}, come stai?")
 
+print(f"Ciao {myfriendslist[0]}, come stai?")
+print(f"Ciao {myfriendslist[1]}, come stai?")
+print(f"Ciao {myfriendslist[2]}, come stai?")
+print(f"Ciao {myfriendslist[3]}, come stai?")

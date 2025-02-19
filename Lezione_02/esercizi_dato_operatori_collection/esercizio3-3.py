@@ -7,3 +7,9 @@ myfavoritelist:list = ["Motocicletta Honda", "Macchina Ducia Duster", "Macchina 
 
 for items in myfavoritelist:
         print(f"Mi piacerebbe avere una", items)
+
+print(f"Mi piacerebbe avere una {myfavoritelist[0]}")
+print(f"Mi piacerebbe avere una {myfavoritelist[1]}")
+print(f"Mi piacerebbe avere una {myfavoritelist[2]}")
+print(f"Mi piacerebbe avere una {myfavoritelist[3]}")
+print(f"Mi piacerebbe avere una {myfavoritelist[4]}")
