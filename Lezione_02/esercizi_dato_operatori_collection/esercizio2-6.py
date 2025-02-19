@@ -5,4 +5,4 @@ Then compose your message and represent it with a new variable called message. P
 famous_person:str = "Albert Einstein"
 message:str = "A person who never made a mistake never tried anything new."
 
-print(f'''{famous_person}, once said: "{message}"''')
+print(f'{famous_person}, once said: "{message}"')
