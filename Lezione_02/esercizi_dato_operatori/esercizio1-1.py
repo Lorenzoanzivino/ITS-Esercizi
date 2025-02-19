@@ -7,8 +7,8 @@
 
 x: float = 2.3
 y: float = 1.0/x
-Prod: int = x*y
+Prod: float = x*y
 
-print(x,y)
+print(x, f"{y:.3f}")
 print(Prod)
-print(x-Prod)
+print(Prod-x)
