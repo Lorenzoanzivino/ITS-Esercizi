@@ -11,4 +11,4 @@ Prod: float = x*y
 
 print(x, f"{y:.3f}")
 print(Prod)
-print(Prod-x)
+print(f"{Prod-x:.3f}")
