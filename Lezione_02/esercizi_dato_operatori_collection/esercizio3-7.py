@@ -19,7 +19,8 @@ print(f"Ciao {invitati_cena[0]}, sei invitato alla mia cena")
 print(f"{invitati_cena} ho trovato un tavolo più grande, si uniranno altre persone")
 
 invitati_cena.insert(0, "Ciro")
-invitati_cena.insert(3, "Fabio")
+meta = len(invitati_cena)//2
+invitati_cena.insert(meta, "Fabio")
 invitati_cena.append("Carlo")
 print(invitati_cena)
 

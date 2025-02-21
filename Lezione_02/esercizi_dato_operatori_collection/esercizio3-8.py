@@ -11,3 +11,24 @@ Seeing the World: Think of at least five places in the world you’d like to vis
 • Use sort() to change your list so it’s stored in alphabetical order. Print the list to show that its order has been changed.
 • Use sort() to change your list so it’s stored in reverse-alphabetical order.
 Print the list to show that its order has changed.'''
+
+my_favorite_places:list[str] = ["Giappone", "Roma", "Francia", "ITS", "Canada"]
+print(f"lista originale {my_favorite_places}")
+
+print(f"\nlista alfabetica", sorted(my_favorite_places))
+
+print(f"\nlista originale reverse", sorted(my_favorite_places, reverse=True))
+
+print(f"\nlista originale {my_favorite_places}\n")
+
+my_favorite_places.reverse()
+print(f"\nlista originale {my_favorite_places}\n")
+
+my_favorite_places.reverse()
+print(f"\nNuova lista originale {my_favorite_places}\n")
+
+my_favorite_places.sort()
+print(f"\nlista alfabetica {my_favorite_places}\n")
+
+my_favorite_places.sort(reverse=True)
+print(f"\nNuova lista alfabetica, reverse {my_favorite_places}\n")
