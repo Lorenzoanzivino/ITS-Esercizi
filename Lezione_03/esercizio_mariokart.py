@@ -13,3 +13,17 @@ elif position == 3:
 
 else:
     print(f"{position}th!")
+
+
+#Metodo Match
+n:int= int(input("Digita la tua posizione: "))
+
+match n:
+    case 1:
+        print(f" Sei {n} st")
+    case 2: 
+        print(f"Sei {n} nd")
+    case 3:
+        print(f"Sei {n} rd") 
+    case _:
+        print(f"Sei {n} th")
