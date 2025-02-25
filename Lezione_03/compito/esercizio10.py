@@ -42,7 +42,7 @@ while True:
             sommaD += numero
             media = sommaD / cont_numeri
             
-# Stampa dei risultati
+# Stampa dei risultati in output
 print(f"I numeri scelti sono: {numeri}")
 print(f"La somma dei numeri pari: {sommaP}")
 print(f"La media dei numeri dispari: {media:.2f}")
