@@ -1,5 +1,5 @@
-'''
-Esercizio 3C-6. Modificare il codice dell'esercizio 3C-4, affinchè si possa scrivere un codice python che consenta all'utente di inserire il nome di un animale ed un habitat. Quando il codice dell'esercizo 3C-4 classifica l'animale inserito in una delle categorie tra mammiferi, rettili, uccelli o pesci, oltre a mostrare un messaggio a schermo, deve salvare tale categoria in una variabile animal_type. Se l'animale inserito non è classificabile in una delle quattro categorie proposte, il valore di animal_type sarà ' "unknown".
+'''Esercizio 3C-6.
+Modificare il codice dell'esercizio 3C-4, affinchè si possa scrivere un codice python che consenta all'utente di inserire il nome di un animale ed un habitat. Quando il codice dell'esercizo 3C-4 classifica l'animale inserito in una delle categorie tra mammiferi, rettili, uccelli o pesci, oltre a mostrare un messaggio a schermo, deve salvare tale categoria in una variabile animal_type. Se l'animale inserito non è classificabile in una delle quattro categorie proposte, il valore di animal_type sarà ' "unknown".
 
 Inserire, poi, in un dizionario il nome dell'animale, la categoria a cui esso appartiene (animal_type) e l'habitat.
 
@@ -57,3 +57,25 @@ Output:
 Non so dire in quale categoria classificare l'animale drago!
 Non sono in grado di fornire informazioni sull'habitat aria.
 '''
+
+animale:str = input("Digita il nome di un animale: ")
+habitat:str = input(f"Digita l'habitat in cui vive l'animale {animale} tra: acqua, aria e terra: ")
+
+animali:dict = {"nome":animale, "habitat":habitat}
+
+match animali:
+    case {"nome":["cane"|"gatto"|"cavallo"|"elefante"|"leone"|"balena"|"delfino"], "habitat":["terra"|"aria"|"acqua"]}:
+        print(f"{animale} appartiene alla categoria dei Mammiferi")
+        print(f"L'animale {animale} è uno dei mammiferi che vivere nell'habitat {habitat}")
+
+
+''' case ("serpente"|"lucertola"|"tartaruga"|"coccodrillo"):
+        print(f"{animale} appartiene alla categoria dei Rettili")
+    case ("quila"|"pappagallo"|"gufo"|"falco"|"cigno"|"anatra"|"gallina"|"tacchino"):
+        print(f"{animale} appartiene alla categoria degli Uccelli")
+    case ("squalo"|"trota"|"salmone"|"carpa"):
+        print(f"{animale} appartiene alla categoria dei Pesci")
+    case _:
+        print(f"Non so dire in quale categoria classificare l'animale {animale}")
+'''
+
