@@ -21,11 +21,11 @@ piove = True
 colore_preferito = "blue"
 
 # Test macchina 1
-print("La macchie è: == 'subaru'? I predict True.")
+print("La macchina == 'subaru'? I predict True.")
 print(macchina == 'subaru')
 
 # Test macchina 2
-print("\nLa macchie è: == 'audi'? I predict False.")
+print("\nLa macchina == 'audi'? I predict False.")
 print(macchina == 'audi')
 
 # Test anni 1
