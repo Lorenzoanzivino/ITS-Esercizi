@@ -48,7 +48,7 @@ match user:
     case {"nome":nome,"ruolo":"admin", "anni":anni}:
         print("Accesso completo a tutte le funzionalità.")
     case {"nome":nome,"ruolo":"moderatore", "anni":anni}:
-        print("Può gestire i contenuti ma non modificare le impostazioni.")
+        print(f"Salve {nome}! può gestire i contenuti ma non modificare le impostazioni.")
     case {"nome":nome,"ruolo":"utente", "anni":anni}:
         if anni >= 18:
             print("Accesso standard a tutti i servizi.")
