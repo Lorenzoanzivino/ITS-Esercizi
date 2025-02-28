@@ -60,13 +60,22 @@ Non sono in grado di fornire informazioni sull'habitat aria.
 
 animale:str = input("Digita il nome di un animale: ")
 habitat:str = input(f"Digita l'habitat in cui vive l'animale {animale} tra: acqua, aria e terra: ")
+animal_type:str = '"unknown"'
 
-animali:dict = {"nome":animale, "habitat":habitat}
+#animali:dict = {"nome":animale, "habitat":habitat}
+mammiferi:list[str] = ["cane", "gatto", "cavallo", "elefante", "leone", "balena", "delfino"]
 
-match animali:
-    case {"nome":["cane"|"gatto"|"cavallo"|"elefante"|"leone"|"balena"|"delfino"], "habitat":["terra"|"aria"|"acqua"]}:
-        print(f"{animale} appartiene alla categoria dei Mammiferi")
-        print(f"L'animale {animale} è uno dei mammiferi che vivere nell'habitat {habitat}")
+match animale:
+    case ("cane"|"gatto"|"cavallo"|"elefante"|"leone"|"balena"|"delfino"):
+        if animale == "balena" or animale == "delfino":
+            habitat == "acqua"
+            animal_type = "Mammiferi"
+            print(f"{animale} appartiene alla categoria dei {animal_type}")
+            print(f"L'animale {animale} è uno dei {animal_type} che vive nell'habitat {habitat}")
+        else:
+            habitat == "terra"
+print(f"{animale} appartiene alla categoria dei {animal_type}")
+print(f"L'animale {animale} è uno dei {animal_type} che vive nell'habitat {habitat}")
 
 
 ''' case ("serpente"|"lucertola"|"tartaruga"|"coccodrillo"):
