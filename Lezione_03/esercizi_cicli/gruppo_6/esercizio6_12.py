@@ -1,0 +1,1 @@
+'''6-12. Estensioni: stiamo lavorando con esempi abbastanza complessi da poter essere estesi in qualsiasi modo. Usa uno dei programmi di esempio di questo capitolo ed estensilo aggiungendo nuove chiavi e valori, modificando il contesto del programma o migliorando la formattazione dell'output.'''

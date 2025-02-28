@@ -1,0 +1,2 @@
+'''- 6-8. Animali: Fare diversi dizionari, dove ogni dizionario rappresenta un animale domestico diverso. In ogni dizionario, includere il tipo di animale e il nome del proprietario. Conservare questi dizionari in una lista chiamata animali domestici. Successivamente, passa attraverso la tua lista e come
+Fai, stampa tutto quello che sai su ogni animale.'''

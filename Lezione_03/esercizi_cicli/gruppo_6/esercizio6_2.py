@@ -1,0 +1,2 @@
+'''- 6-2. Numeri preferiti: utilizzare un dizionario per memorizzare i numeri preferiti delle persone. Pensa a cinque nomi e usali come chiavi nel tuo dizionario. Pensa a un numero preferito per ogni persona e memorizza ciascuno come un valore nel tuo dizionario. Stampa il nome di ogni persona e il suo numero preferito. Per ancora più divertimento, controlla alcuni amici e ottieni alcuni dati reali per il tuo programma.'''
+

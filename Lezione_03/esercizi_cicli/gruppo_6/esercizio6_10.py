@@ -1,0 +1,1 @@
+'''6-10. Numeri preferiti: Modifica il tuo programma dall'esercizio 6-2 in modo che ogni persona possa avere più di un numero preferito. Quindi stampa il nome di ogni persona insieme ai suoi numeri preferiti.'''

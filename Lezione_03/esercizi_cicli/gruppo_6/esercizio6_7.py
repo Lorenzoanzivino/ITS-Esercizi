@@ -1,0 +1,1 @@
+'''6-7. Persone: Inizia con il programma che hai scritto per l'esercizio 6-1. Crea due nuovi dizionari che rappresentano persone diverse e conserva tutti e tre i dizionari in una lista chiamata persone. Attraversa la tua lista di persone. Mentre in loop l'elenco, stampa tutto ciò che sai su ogni persona.'''
