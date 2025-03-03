@@ -58,33 +58,63 @@ Non so dire in quale categoria classificare l'animale drago!
 Non sono in grado di fornire informazioni sull'habitat aria.
 '''
 
-animale:str = input("Digita il nome di un animale: ")
-habitat:str = input(f"Digita l'habitat in cui vive l'animale {animale} tra: acqua, aria e terra: ")
-animal_type:str = '"unknown"'
+mammiferi = ["cane", "gatto", "cavallo", "elefante", "leone", "balena", "delfino"]
+rettili = ["serpente", "lucertola", "tartaruga", "coccodrillo"]
+uccelli = ["aquila", "pappagallo", "gufo", "falco", "cigno", "anatra", "gallina", "tacchino"]
+pesci = ["squalo", "trota", "salmone", "carpa"]
 
-#animali:dict = {"nome":animale, "habitat":habitat}
-mammiferi:list[str] = ["cane", "gatto", "cavallo", "elefante", "leone", "balena", "delfino"]
+# Habitat validi
+habitat_list = ["acqua", "aria", "terra"]
 
-match animale:
-    case ("cane"|"gatto"|"cavallo"|"elefante"|"leone"|"balena"|"delfino"):
-        if animale == "balena" or animale == "delfino":
-            habitat == "acqua"
-            animal_type = "Mammiferi"
-            print(f"{animale} appartiene alla categoria dei {animal_type}")
-            print(f"L'animale {animale} è uno dei {animal_type} che vive nell'habitat {habitat}")
+# Input utente
+animal = input("Digita il nome di un animale: ").lower()
+habitat = input(f"Digita l'habitat in cui vive l'animale {animal}: ").lower()
+
+# Classificazione dell'animale
+if animal in mammiferi:
+    animal_type = "Mammifero"
+elif animal in rettili:
+    animal_type = "Rettili"
+elif animal in uccelli:
+    animal_type = "Uccelli"
+elif animal in pesci:
+    animal_type = "Pesci"
+else:
+    animal_type = "Unknown"
+
+# Creazione del dizionario
+animale_info = {"Nome": animal,"Categoria": animal_type,"Habitat": habitat}
+
+# Controllo della compatibilità dell'habitat
+match animal_type:
+    case "Mammifero":
+        if animal in ["balena", "delfino"]:
+            habitat_corretto = "acqua"
         else:
-            habitat == "terra"
-print(f"{animale} appartiene alla categoria dei {animal_type}")
-print(f"L'animale {animale} è uno dei {animal_type} che vive nell'habitat {habitat}")
+            habitat_corretto = "terra"
+    
+    case "Rettili":
+        if animal == "tartaruga":
+            habitat_corretto = "acqua"
+        else:
+            habitat_corretto = "terra"
 
+    case "Uccelli":
+        habitat_corretto = "aria"
 
-''' case ("serpente"|"lucertola"|"tartaruga"|"coccodrillo"):
-        print(f"{animale} appartiene alla categoria dei Rettili")
-    case ("quila"|"pappagallo"|"gufo"|"falco"|"cigno"|"anatra"|"gallina"|"tacchino"):
-        print(f"{animale} appartiene alla categoria degli Uccelli")
-    case ("squalo"|"trota"|"salmone"|"carpa"):
-        print(f"{animale} appartiene alla categoria dei Pesci")
+    case "Pesci":
+        habitat_corretto = "acqua"
+    
     case _:
-        print(f"Non so dire in quale categoria classificare l'animale {animale}")
-'''
+        habitat_corretto = "unknown"
 
+# Verifica della corrispondenza habitat
+if habitat_corretto == "unknown":
+    print(f"Errore: non conosco la categoria dell'animale '{animal}'.")
+elif habitat == habitat_corretto:
+    print(f"Sì! Un {animal} può vivere in {habitat}.")
+else:
+    print(f"Attenzione: Un {animal} non vive in {habitat}, dovrebbe stare in {habitat_corretto}.")
+
+# Output del dizionario
+print("\nDati registrati:", animale_info)
