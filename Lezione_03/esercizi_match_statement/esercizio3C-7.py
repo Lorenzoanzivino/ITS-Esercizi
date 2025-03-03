@@ -25,20 +25,23 @@ Percentuale "croce": 37.50%'''
 testa = 0
 croce = 0
 
+i: int = 0
+
 print("Inserisci 't' o 'T' per 'testa' oppure 'c' o 'C' per 'croce'.")
-
 # Ciclo per 8 lanci
-for i in range(1, 9):
-    lancio:str = input(f"Lancio {i}: ")
-
+while i < 8:
+    lancio:str = input(f"Lancio {testa+croce}: ")
+    
     match lancio:
         case "t"|"T":
             testa += 1
+            i += 1
         case "c"|"C":
             croce += 1
+            i += 1
         case _:
             print("Input non valido! Devi inserire 't' per testa o 'c' per croce.")
-            i -= 1 
+            
 
 # Percentuali
 totale = testa + croce
