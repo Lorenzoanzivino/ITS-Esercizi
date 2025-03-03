@@ -5,12 +5,9 @@
 - "Tu dici" seguito dalla frase inserita racchiusa tra doppi apici in tutti gli altri casi.
 
 Expected Output:
-
 frase: di essere bellissimo
 Output: Tu dici "di essere bellissimo"
-
 - - - - - - - - - - - - - - - - - - - - - -
-
 frase: ho vinto!
 Output: Wow!
 '''
