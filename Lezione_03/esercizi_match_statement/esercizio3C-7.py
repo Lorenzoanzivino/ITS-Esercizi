@@ -32,9 +32,9 @@ for i in range(1, 9):
     lancio:str = input(f"Lancio {i}: ")
 
     match lancio:
-        case 't':
+        case "t"|"T":
             testa += 1
-        case 'c':
+        case "c"|"C":
             croce += 1
         case _:
             print("Input non valido! Devi inserire 't' per testa o 'c' per croce.")
