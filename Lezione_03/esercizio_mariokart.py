@@ -3,16 +3,16 @@
 position:int= int(input("Insert finishing position: "))
 
 if position == 1:
-    print(f"{position}st!")
+    print(f"You're {position}st!")
 
 elif position == 2:
-    print(f"{position}nd!")
+    print(f"You're {position}nd!")
 
 elif position == 3:
-    print(f"{position}rd!")
+    print(f"You're {position}rd!")
 
 else:
-    print(f"{position}th!")
+    print(f"You're {position}th!")
 
 
 #Metodo Match
