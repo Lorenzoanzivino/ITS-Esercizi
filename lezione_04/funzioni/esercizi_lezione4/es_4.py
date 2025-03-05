@@ -13,4 +13,5 @@ def print_numbers(numeri):
         else:
             print(f"{i} è più grande di 5")
 
+# Non metto il PRINT perche non ho il return
 (print_numbers(numeri))

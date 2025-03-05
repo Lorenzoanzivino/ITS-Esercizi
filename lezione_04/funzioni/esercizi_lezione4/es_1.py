@@ -11,4 +11,5 @@ def check_value(n1:int):
     else:
         print(f"Il numero {n1} è più grande")
 
+# Non metto il PRINT perche non ho il return
 check_value(n1)

@@ -7,4 +7,5 @@ def print_numbers(numeri):
     for i in numeri:
         print(i)
 
+# Non metto il PRINT perche non ho il return
 print(numeri)

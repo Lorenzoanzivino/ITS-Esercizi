@@ -11,4 +11,5 @@ def check_lenght(text):
     else:
         print("La stringa è più grande di 10 caratteri")
 
+# Non metto il PRINT perche non ho il return
 check_lenght(text)

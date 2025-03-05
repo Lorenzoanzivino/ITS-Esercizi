@@ -19,4 +19,5 @@ def add_one_to_list(list):
 
     return new_list
 
+# Metto il PRINT perche non ho il return
 print(add_one_to_list(list))
