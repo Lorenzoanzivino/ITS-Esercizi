@@ -49,6 +49,9 @@ n2:int = int(input("Inserisci un numero: "))
 def subtract(a:int, b:int) -> int: # -> int serve per far capire che il valore che ritorna è un intero
     # variabile che avrà l'operazione
     risultato:int = a - b
+    # se il primo numero è minore, inverto i valori
+    if a < b:
+        risultato = b - a
     # ritorno della variabile come risultato
     return risultato
 print(f"La sottrazione è: {subtract(n1, n2)}")
