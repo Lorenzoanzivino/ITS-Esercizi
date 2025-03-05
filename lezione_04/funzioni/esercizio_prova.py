@@ -44,7 +44,7 @@ print(f"Sum from 35 to 49 is {sumInRange(35, 49)}")
 
 '---------------------------------------------------------------------------------------------------------------'
 
-# Sottrazione con dati in input
+# Sottrazione con dati in input dati dall'utente
 n1:int = int(input("\nInserisci un numero: "))
 n2:int = int(input("Inserisci un numero: "))
 
