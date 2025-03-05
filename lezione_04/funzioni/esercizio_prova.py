@@ -20,7 +20,7 @@ print("La somma tra 35 e 49 è:", sum)
 
 '---------------------------------------------------------------------------------------------------------------'
 
-# FUNZIONI 
+# FUNZIONI: ripeto gli esercizi precedenti, usando le funzioni
 def sumInRange(a:int, b:int):
 # definire una somma
     result:int = 0
@@ -31,10 +31,12 @@ def sumInRange(a:int, b:int):
     return result
 # salvo la funzione in una variabile cosi da inserire nel print solo il nome della variabile
 my_sum:int = sumInRange(1, 10)
-# utilizzare la funzione sumInRange per calcolare una somma di numeri da 1 to 10
-print(f"Sum from 1 to 10 is {sumInRange(1, 10)}")
-# oppure
+
+# utilizzare la funzione sumInRange modificando direttamente solo i parametri
+print(f"\nSum from 1 to 10 is {sumInRange(1, 10)}")
+# oppure inserisco il nome della variabile dove ho salvato la funzione ma senza modificare i parametri
 print(f"Sum from 1 to 10 is {my_sum}")
+
 # utilizzare la funzione sumInRange per calcolare una somma di numeri da 20 to 37
 print(f"Sum from 20 to 37 is {sumInRange(20, 37)}")
 # utilizzare la funzione sumInRange per calcolare una somma di numeri da 35 to 49
@@ -43,7 +45,7 @@ print(f"Sum from 35 to 49 is {sumInRange(35, 49)}")
 '---------------------------------------------------------------------------------------------------------------'
 
 # Sottrazione con dati in input
-n1:int = int(input("Inserisci un numero: "))
+n1:int = int(input("\nInserisci un numero: "))
 n2:int = int(input("Inserisci un numero: "))
 
 def subtract(a:int, b:int) -> int: # -> int serve per far capire che il valore che ritorna è un intero
