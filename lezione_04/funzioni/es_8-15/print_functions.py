@@ -15,3 +15,7 @@ def print_numeri(n):
     for i in range(1, n + 1):
         print(i, end=' ')
     print()
+
+def print_punti(n):
+    ''' stampa una riga di punti '''
+    print("·" * n)
