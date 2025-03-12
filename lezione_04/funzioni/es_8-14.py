@@ -7,3 +7,19 @@ def car(casa_produttrice, model, **kwargs):
 
 valori = car("Fiat", "panda", motore="1200 cc", colore = "rosso", anno = "2000")
 print(valori)
+
+
+# esempio di ARGS -> *args
+def myfunc(*args):
+    print(args)
+    print(type(args))
+
+myfunc(1, 2, 3, 4, 5)
+
+
+# esempiuo di KWARGS -> **kwargs
+def myfunc_2(**kwargs):
+    print(kwargs)
+    print(type(kwargs))
+
+myfunc_2(motore="1200 cc", colore = "rosso", anno = "2000")
