@@ -2,20 +2,25 @@
 
 # printing_functions.py
 
-def print_asterischi(n):
+def printing_asterischi(n:str):
     """ stampa una riga di asterischi """
     print('*' * n)
 
-def print_trattini(n):
+def printing_trattini(n:str):
     """ stampa una riga di trattini """
     print('-' * n)
 
-def print_numeri(n):
+def printing_numeri(n:str):
     """ stampa numeri da 1 a ... """
     for i in range(1, n + 1):
         print(i, end=' ')
     print()
 
-def print_punti(n):
+def printing_punti(n:str):
     ''' stampa una riga di punti '''
     print("·" * n)
+
+def printing_somma(a:int, b:int):
+    ''' stampa la somma'''
+    print(a + b)
+    return a + b
