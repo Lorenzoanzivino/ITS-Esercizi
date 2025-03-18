@@ -10,4 +10,4 @@
 
 - 13/03/25 inizio studio delle "Classi" Lezione 6
 
-- 18/03/25 inizio modulo di "Progettazione"
+- 18/03/25 inizio Corso modulo di "Progettazione"
