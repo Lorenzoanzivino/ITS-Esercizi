@@ -9,3 +9,5 @@
 - 11/03/25 comandi di Pull da remoto a locale
 
 - 13/03/25 inizio studio delle "Classi" Lezione 6
+
+- 18/03/25 inizio modulo di "Progettazione"
