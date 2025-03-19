@@ -4,9 +4,9 @@
 from es_9_1 import Restaurant
 
 
-restaurant_sushi: Restaurant = Restaurant("Hanami Sushi", "Sushi")
+restaurant_sushi: Restaurant = Restaurant("Konan", "Sushi")
 restaurant_italian: Restaurant = Restaurant("Pizzeria", "Pizza")
-restaurant_chinese: Restaurant = Restaurant("China", "Chinese")
+restaurant_chinese: Restaurant = Restaurant("La Grande Muraglia", "Cinese")
 
 
 restaurant_sushi.describe_restaurant()

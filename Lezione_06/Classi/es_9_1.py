@@ -15,19 +15,17 @@ class Restaurant:
     
     def describe_restaurant(self):
 
-        print(f'The restaurant {self.restaurant_name} serves {self.cusine_type}')
+        print(f'Il ristorante: {self.restaurant_name}, serve: {self.cusine_type}')
 
     
     def open_restaurant(self):
 
-        print("The restaurant is open!")
+        print("Il Ristorante è aperto!")
 
 
 if __name__ == "__main__":
 
-    restaurant: Restaurant = Restaurant("Hanami Sushi", "Sushi")
+    restaurant:Restaurant = Restaurant("Tokyo", "Sushi")
 
     restaurant.describe_restaurant()
     restaurant.open_restaurant()
-
-        
