@@ -3,20 +3,42 @@
 
 
 class Restaurant:
-
-
-    def __init__(self, restaurant_name: str, cusine_type:str, number_served: int = 0):
-
+    def __init__(self, restaurant_name:str, cuisine_type:str, number_served:int = 0):
 
         self.restaurant_name = restaurant_name
-        self.cusine_type = cusine_type
+        self.cuisine_type = cuisine_type
         self.number_served = number_served
-    
+
     def describe_restaurant(self):
+        print(f"Il ristorante: {self.restaurant_name}, serve cucina: {self.cuisine_type}.")
 
-        print(f'The restaurant {self.restaurant_name} serves {self.cusine_type}')
-
-    
     def open_restaurant(self):
+        print("Il ristorante è aperto!")
 
-        print("The restaurant is open!")
+    def set_number_served(self, new_number: int):
+        """Imposta il numero di clienti serviti."""
+        self.number_served = new_number
+
+    def increment_number_served(self, increment: int):
+        """Incrementa il numero di clienti serviti di un certo valore."""
+        self.number_served += increment
+
+
+# Creiamo un'istanza della classe Restaurant
+restaurant = Restaurant("'La Dolce Vita'", "'Italiana'")
+
+
+# Chiamata ai metodi per descrivere il ristorante e aprirlo
+restaurant.describe_restaurant()  # Questo stampa le informazioni sul ristorante
+restaurant.open_restaurant()  # Questo stampa che il ristorante è aperto
+
+# Mostriamo il numero di clienti serviti inizialmente
+print(f"Numero di clienti serviti: {restaurant.number_served}")
+
+# Cambiamo il numero di clienti serviti e lo stampiamo
+restaurant.set_number_served(50)
+print(f"Numero di clienti serviti dopo l'impostazione: {restaurant.number_served}")
+
+# Incrementiamo il numero di clienti serviti e lo stampiamo
+restaurant.increment_number_served(30)
+print(f"Numero di clienti serviti dopo l'incremento: {restaurant.number_served}")
