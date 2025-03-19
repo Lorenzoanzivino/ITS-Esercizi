@@ -15,15 +15,15 @@ class User:
     def describe_user(self):
 
 
-        print(f'First name: {self.first_name} - Last name: {self.last_name} - Age: {self.age} - Gender: {self.gender}')
+        print(f'nome: {self.first_name} - cognome: {self.last_name} - anni {self.age} - Genere: {self.gender}')
 
 
-marcel: User = User("Marcel", "Movileanu", 24, "Male")
+lorenzo: User = User("Lorenzo", "Anzivino", 28, "Male")
 stefano: User = User("Stefano", "Reali", 34, "Male")
 leandro: User = User("Leandro", "Pazienza", 27, "Male")
 francesco: User = User("Francesco", "Magno", 12, "Male")
 
-marcel.describe_user()
+lorenzo.describe_user()
 stefano.describe_user()
 leandro.describe_user()
 francesco.describe_user()
