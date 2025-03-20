@@ -42,3 +42,8 @@ la.setAge(28)
 print("-----------------")
 
 la.displayData()
+
+print("-----------------")
+
+# Print dei Get
+print(la.getName(), la.getLastname(), la.getAge())
