@@ -10,7 +10,7 @@ class Persona:
     def displayData(self) -> None:
         print(f"Nome: {self.name}\nCognome: {self.lastname}\nAnni: {self.age}")
 
-    # 3 SET funzione che mi consenta di impostare/modificare i valori di self.name
+    # 3 SET metodo che mi consenta di impostare/modificare i valori di self.name
     def setName(self, name:str) -> None:
         self.name = name
     
@@ -26,7 +26,7 @@ class Persona:
         else:
             self.age = age
 
-    # 4 GET funzione che mi consente di ritornarne il valore di self.name
+    # 4 GET metodo che mi consente di ritornarne il valore di self.name
     def getName(self) -> str:
         return self.name
     

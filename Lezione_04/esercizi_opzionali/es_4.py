@@ -5,35 +5,21 @@ La funzione dovrebbe stampare un report che mostra le parole più frequenti e il
 Puoi usare un ciclo for per scorrere le parole nel testo e un dizionario per memorizzare le occorrenze.
 Implementa la gestione degli errori per gestire file mancanti o altri problemi di input.'''
 
-def paragraph(testo:str, parole_ripetute:str, ripetizioni:int) -> None:
-    testo:str = "Il cielo è azzurro, il cielo è sereno. Il vento soffia leggero. Ogni giorno è un nuovo giorno, ogni giorno porta nuove opportunità."
-    
-    parole_ripetute:list = []
-
-    for parola in testo:
-        if parola not in testo:
-            parole_ripetute.append(parola)
-
-    return parole_ripetute
-
-print(paragraph())
-
-
-def paragraph(testo:str) -> None:
+def paragrafo(testo: str) -> None:
+    # Rimuovere la punteggiatura e suddividere in parole
+    testo = testo.lower()  # Rendere tutto il testo in minuscolo
     parole = []
     parola = ""
     
-    # Itera sui caratteri del testo
     for char in testo:
-        if char != " " and char not in ",.!?":  # Continua a raccogliere caratteri che fanno parte della parola
+        if char.isalnum() or char == "'":  # Considera solo lettere, numeri e apostrofi
             parola += char
         else:
-            if parola:  # Quando finisci una parola (perché c'è uno spazio o un segno di punteggiatura)
+            if parola:  # Se trovi una parola, aggiungila alla lista
                 parole.append(parola)
-                parola = ""
+                parola = ""  # Reset della parola
     
-    # Aggiungi l'ultima parola se c'è
-    if parola:
+    if parola:  # Aggiungi l'ultima parola
         parole.append(parola)
     
     # Conta le occorrenze delle parole
@@ -44,11 +30,12 @@ def paragraph(testo:str) -> None:
         else:
             frequenza[parola] = 1
     
-    # Trova e stampa le parole ripetute
-    parole_ripetute = [parola for parola, count in frequenza.items() if count > 1]
-    print(parole_ripetute)
+    # Stampa le parole che si ripetono
+    print("Le parole che si ripetono nel testo sono:")
+    for parola, count in frequenza.items():
+        if count > 1:
+            print(f"'{parola}': {count} occorrenze")
 
-# Esegui la funzione
-testo = "Il cielo è azzurro, il cielo è sereno. Il vento soffia leggero. Ogni giorno è un nuovo giorno, ogni giorno porta nuove opportunità."
-paragraph(testo)
-
+# Testa la funzione con un testo
+testo = "Il cielo è azzurro, il cielo è sereno. Il vento soffia leggero. Ogni giorno è un nuovo giorno, ogni giorno porta nuove opportunità"
+paragrafo(testo)
