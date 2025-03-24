@@ -11,8 +11,6 @@ In pratica, dovrai creare una struttura dati (ad esempio un dizionario) che cont
     Aggiornare articoli: Modificare i dettagli di un articolo, come quantità o prezzo.
 Utilizzerai cicli for per iterare sull'inventario e istruzioni condizionali (if) per verificare le condizioni (ad esempio, se un articolo esiste già o se la quantità è sufficiente).'''
 
-
-
 # Dizionario globale per memorizzare l'inventario
 inventario = {}
 
