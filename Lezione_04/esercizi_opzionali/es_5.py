@@ -12,7 +12,7 @@ In pratica, dovrai creare una struttura dati (ad esempio un dizionario) che cont
 Utilizzerai cicli for per iterare sull'inventario e istruzioni condizionali (if) per verificare le condizioni (ad esempio, se un articolo esiste già o se la quantità è sufficiente).'''
 
 # Dizionario globale per memorizzare l'inventario
-inventario = {}
+inventario:dict = {}
 
 # Funzione per aggiungere o aggiornare un articolo
 def aggiungi_articolo(codice:int, nome:str, quantita:int, prezzo:float) -> None:
