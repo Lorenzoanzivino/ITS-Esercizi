@@ -41,24 +41,29 @@ def genera_password(lunghezza, maiuscole, minuscole, simboli, numeri):
 
     # Aggiungi lettere maiuscole
     for i in range(maiuscole):
-        password.append(random.choice(maiuscole_str))
+        indice_casuale:int = random.randint(0, len(maiuscole_str) - 1)
+        password.append(maiuscole_str[indice_casuale])
 
     # Aggiungi lettere minuscole
     for i in range(minuscole):
-        password.append(random.choice(minuscole_str))
+        indice_casuale:int = random.randint(0, len(minuscole_str) - 1)
+        password.append(minuscole_str[indice_casuale])
 
     # Aggiungi numeri
     for i in range(numeri):
-        password.append(random.choice(numeri_str))
+        indice_casuale:int = random.randint(0, len(numeri_str) - 1)
+        password.append(numeri_str[indice_casuale])
 
     # Aggiungi simboli
     for i in range(simboli):
-        password.append(random.choice(simboli_str))
+        indice_casuale:int = random.randint(0, len(simboli_str) - 1)
+        password.append(simboli_str[indice_casuale])
 
     # Aggiungi caratteri casuali per completare la lunghezza della password
     caratteri_disponibili = maiuscole_str + minuscole_str + numeri_str + simboli_str
     for i in range(lunghezza - len(password)):
-        password.append(random.choice(caratteri_disponibili))
+        indice_casuale:int = random.randint(0, len(caratteri_disponibili) - 1)
+        password.append(caratteri_disponibili[indice_casuale])
 
     # Mischia la password per garantire casualità
     random.shuffle(password)
@@ -66,18 +71,14 @@ def genera_password(lunghezza, maiuscole, minuscole, simboli, numeri):
     # Restituisci la password come stringa
     return ''.join(password)
 
-def main():
-    # Ottieni i parametri dall'utente
-    lunghezza, maiuscole, minuscole, simboli, numeri = scegli_parametri()
-    
-    # Genera la password
-    password = genera_password(lunghezza, maiuscole, minuscole, simboli, numeri)
-    
-    # Mostra la password generata
-    print(f"La tua password generata è: {password}")
+# Ottieni i parametri dall'utente
+lunghezza, maiuscole, minuscole, simboli, numeri = scegli_parametri()
 
-    # Mostra asterischi corrispondenti alla lunghezza della password
-    print('*' * len(password))
+# Genera la password
+password = genera_password(lunghezza, maiuscole, minuscole, simboli, numeri)
 
-# Avvia il programma
-main()
+# Mostra la password generata
+print(f"La tua password generata è: {password}")
+
+# Mostra asterischi corrispondenti alla lunghezza della password
+print('*' * len(password))
