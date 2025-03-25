@@ -20,12 +20,13 @@ def visualizza_carrello(carrello):
     print()
 
 # Creazione del carrello e aggiunta dei prodotti
-carrello = []
+carrello:list = []
 
 # Aggiungiamo alcuni prodotti al carrello
 carrello.append(prodotto('Acqua', 2.30, 6))
 carrello.append(prodotto('Pasta', 0.89, 3))
 carrello.append(prodotto('Pane', 0.70, 5))
+carrello.append(prodotto('carne', 2.70, 5))
 
 # Visualizza il carrello
 visualizza_carrello(carrello)
