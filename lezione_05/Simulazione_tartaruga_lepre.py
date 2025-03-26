@@ -7,7 +7,7 @@
 - Implementare un loop per simulare i tick dell'orologio. Ad ogni tick, calcolare le mosse, mostrare la posizione sulla corsia di gara, e determinare l'eventuale fine della gara.'''
 
 
-# 1) Inizializzazione delle variabili:
+'''# 1) Inizializzazione delle variabili:
 #     • pos_tartaruga = 1  # posizione iniziale della tartaruga
 #     • pos_lepre = 1      # posizione iniziale della lepre
 #     • percorso = lista di 70 caratteri '_' # percorso con 70 posizioni vuote
@@ -43,7 +43,7 @@
 #         • Stampare "HARE WINS || YUCH!!!" e terminare il ciclo.
 #     • Se entrambi raggiungono o superano il quadrato 70 nello stesso tick:
 #         • Stampare "IT'S A TIE." e terminare il ciclo.
-# 8) Se nessuno ha vinto, ripetere il ciclo per il prossimo tick
+# 8) Se nessuno ha vinto, ripetere il ciclo per il prossimo tick'''
 
 import random
 
@@ -51,6 +51,8 @@ import random
 pos_tartaruga = 1
 pos_lepre = 1
 percorso_lista = ['_'] * 70  # Il percorso è composto da 70 caselle
+stamina_T:int = 100
+stamina_L:int = 100
 
 # 2) Funzione per visualizzare il percorso
 def percorso():
@@ -67,18 +69,28 @@ def percorso():
         print("OUCH!!!")
 
 # 3) Funzione per calcolare la mossa della tartaruga
-def mossa_T(pos_tartaruga, piove):
+def mossa_T(pos_tartaruga, piove, stamina_T):
+    print(f"Energia: {stamina_T}")
     i = random.randint(1, 10)
     print(f"Mossa tartaruga: {i}")
+
+    if stamina_T < 10:
+        print("Stamina troppo bassa, ricaricando...")
+        stamina_T += 10
+        print(f"Stamina ricaricata: {stamina_T}")
+        return pos_tartaruga, stamina_T
     
     if 1 <= i <= 5:  # Passo veloce
         pos_tartaruga += 3
+        stamina_T -= 5
     elif 6 <= i <= 7:  # Scivolata
         pos_tartaruga -= 6
+        stamina_T -= 10
         if pos_tartaruga < 1:
             pos_tartaruga = 1
     elif 8 <= i <= 10:  # Passo lento
         pos_tartaruga += 1    
+        stamina_T -= 3
 
     if piove:
         pos_tartaruga -= 1
@@ -88,10 +100,11 @@ def mossa_T(pos_tartaruga, piove):
     if pos_tartaruga > 70:  # Non può superare la fine del percorso
         pos_tartaruga = 70
     
-    return pos_tartaruga
+    return pos_tartaruga, stamina_T
 
 # 4) Funzione per calcolare la mossa della lepre
-def mossa_L(pos_lepre, piove):
+def mossa_L(pos_lepre, piove, stamina_L):
+    print(f"Energia: {stamina_L}")
     j = random.randint(1, 10)
     print(f"Mossa lepre: {j}")
     
@@ -138,11 +151,11 @@ while True:
         piove:bool = True
 
     # 1) Calcolare la mossa della tartaruga
-    pos_tartaruga = mossa_T(pos_tartaruga, piove)
+    pos_tartaruga = mossa_T(pos_tartaruga, piove, stamina_T)
     print(pos_tartaruga)
     
     # 2) Calcolare la mossa della lepre
-    pos_lepre = mossa_L(pos_lepre, piove)
+    pos_lepre = mossa_L(pos_lepre, piove, stamina_L)
     print(pos_lepre)
     
     # 3) Aggiornare e visualizzare il percorso
