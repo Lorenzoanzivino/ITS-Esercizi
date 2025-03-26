@@ -6,27 +6,30 @@ Implementa un ciclo for per iterare sugli articoli nel carrello e stampare infor
 
 
 # Funzione che definisce un prodotto
-def prodotto(nome: str, prezzo: float, quantita: int) -> dict:
-    return {'nome': nome, 'prezzo': prezzo, 'quantita': quantita}
+def prodotto(nome:str, prezzo:float, quantita:int) -> dict:
+    return {'nome':nome, 'prezzo':prezzo, 'quantita':quantita}
 
 # Funzione per visualizzare il carrello
 def visualizza_carrello(carrello):
     if not carrello:
         print("Il carrello è vuoto.")
     else:
-        print("Contenuto del carrello:")
+        print("\nContenuto del carrello:")
         for prodotto in carrello:
-            print(f"{prodotto['nome']} - Prezzo: {prodotto['prezzo']}€ - Quantità: {prodotto['quantita']}")
+            print(f"Nome:{prodotto['nome'].title()}, Prezzo:{prodotto['prezzo']:.2f}€, Quantità:{prodotto['quantita']}")
     print()
 
 # Creazione del carrello e aggiunta dei prodotti
 carrello:list = []
 
 # Aggiungiamo alcuni prodotti al carrello
-carrello.append(prodotto('Acqua', 2.30, 6))
-carrello.append(prodotto('Pasta', 0.89, 3))
-carrello.append(prodotto('Pane', 0.70, 5))
-carrello.append(prodotto('carne', 2.70, 5))
+nome_prodotto:str = str(input("Digita il nome del prodotto: "))
+prezzo_prodotto:float = float(input("Digita il prezzo del prodotto: "))
+quantita_prodotto:int = int(input("Digita le quantità del prodotto inserito: "))
+
+# Aggiungiamo il prodotto al carrello come dizionario
+carrello.append(prodotto(nome_prodotto, prezzo_prodotto, quantita_prodotto))
+
 
 # Visualizza il carrello
 visualizza_carrello(carrello)
