@@ -11,3 +11,5 @@
 - 13/03/25 inizio studio delle "Classi" Lezione 6
 
 - 18/03/25 inizio Corso modulo di "Progettazione"
+
+- 27/03/25 inizio Lezione 13 Funzioni Ricorsive
