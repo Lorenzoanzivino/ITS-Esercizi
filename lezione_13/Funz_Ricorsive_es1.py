@@ -36,8 +36,8 @@ print(sum(-5))
 # calling sum function for n = 5
 print(f"\n{sum(5)}")'''
 
-
-def recursive_sum(n:int) -> int:
+# Esempio 1
+'''def recursive_sum(n:int) -> int:
     # n is negative
     if n < 0:
         print("Error! Inserted number is negative!")
@@ -51,4 +51,6 @@ def recursive_sum(n:int) -> int:
     else:
         return int(n + recursive_sum(n-1))
     
-print(recursive_sum(5))
+print(recursive_sum(5))'''
+
+# Esempio 2
