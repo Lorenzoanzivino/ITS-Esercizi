@@ -51,15 +51,13 @@ import random
 pos_tartaruga = 1
 pos_lepre = 1
 percorso_lista = ['_'] * 70  # Il percorso è composto da 70 caselle
-stamina_T:int = 100
-stamina_L:int = 100
 
 # 2) Funzione per visualizzare il percorso
 def percorso():
     percorso_visibile = percorso_lista[:]  # Copia della lista
-    '''pos_tartaruga è sulla prima posizione, Quindi dobbiamo fare pos_tartaruga - 1 per ottenere l'indice corretto.'''
-    percorso_visibile[pos_tartaruga -1] = 'T'  # Aggiungi 'T' per la tartaruga
-    percorso_visibile[pos_lepre -1] = 'H'  # Aggiungi 'H' per la lepre nelle loro posizioni
+    '''pos_tartaruga è sulla prima posizione, quindi dobbiamo fare pos_tartaruga - 1 per ottenere l'indice corretto.'''
+    percorso_visibile[pos_tartaruga - 1] = 'T'  # Aggiungi 'T' per la tartaruga
+    percorso_visibile[pos_lepre - 1] = 'H'  # Aggiungi 'H' per la lepre nelle loro posizioni
     
     # Stampare il percorso
     print(''.join(percorso_visibile))
@@ -69,28 +67,18 @@ def percorso():
         print("OUCH!!!")
 
 # 3) Funzione per calcolare la mossa della tartaruga
-def mossa_T(pos_tartaruga, piove, stamina_T):
-    print(f"Energia: {stamina_T}")
+def mossa_T(pos_tartaruga, piove):
     i = random.randint(1, 10)
     print(f"Mossa tartaruga: {i}")
 
-    if stamina_T < 10:
-        print("Stamina troppo bassa, ricaricando...")
-        stamina_T += 10
-        print(f"Stamina ricaricata: {stamina_T}")
-        return pos_tartaruga, stamina_T
-    
     if 1 <= i <= 5:  # Passo veloce
         pos_tartaruga += 3
-        stamina_T -= 5
     elif 6 <= i <= 7:  # Scivolata
         pos_tartaruga -= 6
-        stamina_T -= 10
         if pos_tartaruga < 1:
             pos_tartaruga = 1
     elif 8 <= i <= 10:  # Passo lento
         pos_tartaruga += 1    
-        stamina_T -= 3
 
     if piove:
         pos_tartaruga -= 1
@@ -100,11 +88,10 @@ def mossa_T(pos_tartaruga, piove, stamina_T):
     if pos_tartaruga > 70:  # Non può superare la fine del percorso
         pos_tartaruga = 70
     
-    return pos_tartaruga, stamina_T
+    return pos_tartaruga
 
 # 4) Funzione per calcolare la mossa della lepre
-def mossa_L(pos_lepre, piove, stamina_L):
-    print(f"Energia: {stamina_L}")
+def mossa_L(pos_lepre, piove):
     j = random.randint(1, 10)
     print(f"Mossa lepre: {j}")
     
@@ -134,9 +121,6 @@ def mossa_L(pos_lepre, piove, stamina_L):
     return pos_lepre
 
 # 5) Ciclo della gara (Tick dell'orologio)
-tick:int = 1  # Iniziamo con il primo tick
-
-# 5) Ciclo della gara (Tick dell'orologio)
 tick = 1  # Iniziamo con il primo tick
 
 while True:
@@ -145,18 +129,18 @@ while True:
     # Meteo
     if (tick // 10) % 2 == 0:  # Ogni 10 tick si alterna
         print('sole')
-        piove:bool = False
+        piove = False
     else:
         print('piove')
-        piove:bool = True
+        piove = True
 
     # 1) Calcolare la mossa della tartaruga
-    pos_tartaruga = mossa_T(pos_tartaruga, piove, stamina_T)
-    print(pos_tartaruga)
+    pos_tartaruga = mossa_T(pos_tartaruga, piove)
+    print(f"Posizione tartaruga: {pos_tartaruga}")
     
     # 2) Calcolare la mossa della lepre
-    pos_lepre = mossa_L(pos_lepre, piove, stamina_L)
-    print(pos_lepre)
+    pos_lepre = mossa_L(pos_lepre, piove)
+    print(f"Posizione lepre: {pos_lepre}")
     
     # 3) Aggiornare e visualizzare il percorso
     percorso()
