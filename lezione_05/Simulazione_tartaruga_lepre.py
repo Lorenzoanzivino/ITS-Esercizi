@@ -55,6 +55,9 @@ percorso_lista:list = ['_'] * 70  # Il percorso è composto da 70 caselle
 stamina_T:int = 100
 stamina_H:int = 100
 
+# Ostacoli
+ostacoli:dict = {15:-3, 30:-5, 45:-7}
+
 # 2) Funzione per visualizzare il percorso
 def percorso():
     percorso_visibile = percorso_lista[:]  # Copia della lista
@@ -71,7 +74,7 @@ def percorso():
         print("OUCH!!!")
 
 # 3) Funzione per calcolare la mossa della tartaruga
-def mossa_T(pos_tartaruga, piove, stamina_T):
+def mossa_T(pos_tartaruga, piove, stamina_T, ostacoli):
     i = random.randint(1, 10)
     print(f"Mossa tartaruga: {i}")
 
@@ -82,12 +85,14 @@ def mossa_T(pos_tartaruga, piove, stamina_T):
             if stamina_T < 0:  # Se la stamina scende sotto 0
                 stamina_T = 0         
             print(f"Stamina rimasta: {stamina_T}")
+
         else:  # Se la stamina è insufficiente
             print("Non hai energia per muoverti. Il turno è saltato.")
             stamina_T += 10  # Ricarica stamina
             if stamina_T > 100:  # Se la stamina supera 100
                 stamina_T = 100            
             print("Energia ricaricata di 10")
+
 
     elif 6 <= i <= 7:  # Scivolata
         if stamina_T >= 10:
@@ -121,6 +126,14 @@ def mossa_T(pos_tartaruga, piove, stamina_T):
             if stamina_T > 100:  # Se la stamina supera 100
                 stamina_T = 100               
             print("Energia ricaricata di 10")
+    
+    # Verifica se la posizione della tartaruga corrisponde a una chiave nel dizionario degli ostacoli
+    if pos_tartaruga in ostacoli:  # Se la posizione è una chiave nel dizionario
+        retrocessione = ostacoli[pos_tartaruga]  # Ottieni il valore (retrocessione) associato alla posizione
+        pos_tartaruga += retrocessione  # Applica la retrocessione (decrementa la posizione)
+        print(f"Ostacolo! La tartaruga retrocede di {retrocessione} posizioni.")
+        if pos_tartaruga < 1:
+            pos_tartaruga = 1  # Non può scendere sotto 1
 
     # Se piove, la tartaruga perde 1 posizione
     if piove:
@@ -135,7 +148,7 @@ def mossa_T(pos_tartaruga, piove, stamina_T):
     return pos_tartaruga, stamina_T
 
 # 4) Funzione per calcolare la mossa della lepre
-def mossa_L(pos_lepre, piove, stamina_H):
+def mossa_L(pos_lepre, piove, stamina_H, ostacoli):
     j = random.randint(1, 10)
     print(f"\nMossa lepre: {j}")
     
@@ -171,6 +184,14 @@ def mossa_L(pos_lepre, piove, stamina_H):
     if stamina_H < 0:
         stamina_H = 0
     print(f"Stamina rimasta: {stamina_H}")   
+
+    # Verifica se la posizione della tartaruga corrisponde a una chiave nel dizionario degli ostacoli
+    if pos_lepre in ostacoli:  # Se la posizione è una chiave nel dizionario
+        retrocessione = ostacoli[pos_lepre]  # Ottieni il valore (retrocessione) associato alla posizione
+        pos_lepre += retrocessione  # Applica la retrocessione (decrementa la posizione)
+        print(f"Ostacolo! La tartaruga retrocede di {retrocessione} posizioni.")
+        if pos_lepre < 1:
+            pos_lepre = 1  # Non può scendere sotto 1
     
     if piove:
         pos_lepre -= 1
@@ -197,11 +218,11 @@ while True:
         piove = True
 
     # 1) Calcolare la mossa della tartaruga
-    pos_tartaruga, stamina_T = mossa_T(pos_tartaruga, piove, stamina_T)
+    pos_tartaruga, stamina_T = mossa_T(pos_tartaruga, piove, stamina_T, ostacoli)
     print(f"Posizione tartaruga: {pos_tartaruga}")
     
     # 2) Calcolare la mossa della lepre
-    pos_lepre, stamina_H = mossa_L(pos_lepre, piove, stamina_H)
+    pos_lepre, stamina_H = mossa_L(pos_lepre, piove, stamina_H, ostacoli)
     print(f"Posizione lepre: {pos_lepre}")
     
     # 3) Aggiornare e visualizzare il percorso
